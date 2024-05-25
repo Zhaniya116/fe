@@ -1,0 +1,84 @@
+<div class="header">
+  <div class="logo">
+    <a (click)="goToHome()">
+      <img src="../../assets/logo.png" alt="MediConnect Logo">
+    </a>
+  </div>
+  <div class="welcome">
+    <h1>Welcome to MediConnect</h1>
+  </div>
+  <div class="auth-buttons">
+    <button *ngIf="!isAuthenticated()" (click)="goToLoginPage()" class="btn btn-primary">Login</button>
+    <button *ngIf="!isAuthenticated()" (click)="goToRegisterPage()" class="btn btn-success">Register</button>
+    <button *ngIf="isAuthenticated()" (click)="goToProfilePage()" class="btn btn-info">My Profile</button>
+    <button *ngIf="isAuthenticated()" (click)="logout()" class="btn btn-danger">Logout</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar-left">
+    <ul>
+      <li><a (click)="goToHome()">Home</a></li>
+      <li><a (click)="goToDoctors()">Doctors</a></li>
+      <li><a (click)="goToServices()">Services</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="section">
+      <h2>Medical Platform MediConnect</h2>
+      <p>
+        A platform for doctors and patients, enabling patients to book online appointments and doctors to find clients.
+      </p>
+      <p>
+        The platform is designed for:
+      </p>
+      <button (click)="scrollToSection('patients-section')" class="btn btn-outline-primary">Patients</button>
+      <button (click)="scrollToSection('doctors-section')" class="btn btn-outline-primary">Doctors</button>
+    </div>
+
+    <div id="patients-section" class="section">
+      <h2>Service for Finding Doctors and Clinics</h2>
+      <p>Quickly find a doctor and clinic, ask questions, and book an appointment online</p>
+      <div class="subsection">
+        <h3>Book an Appointment Online</h3>
+        <p>228,523 appointments booked</p>
+        <p>Select the right doctor in clinics that offer online booking</p>
+        <button (click)="goToBooking()" class="btn btn-primary">Go</button>
+      </div>
+      <div class="subsection">
+        <h3>Promotions, Discounts, and Clinic News</h3>
+        <p>1 promotion and offer</p>
+        <p>Find the best deals and prices on medical services</p>
+        <button (click)="goToOffers()" class="btn btn-primary">Go</button>
+      </div>
+    </div>
+
+    <div id="doctors-section" class="section">
+      <h2>For Doctors</h2>
+      <div class="subsection">
+        <h3>Find Patients Online</h3>
+        <p>228,523 appointments booked</p>
+        <p>Register and conduct online consultations</p>
+        <button (click)="goToRegistration()" class="btn btn-primary">Go</button>
+      </div>
+      <div class="subsection">
+        <h3>Promotions, Discounts, and Clinic News</h3>
+        <p>1 promotion and offer</p>
+        <p>Earn on medical services</p>
+        <button (click)="goToOffers()" class="btn btn-primary">Go</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-right">
+    <ul>
+      <li><a (click)="goToDoctorsArticles()">For Doctors</a></li>
+      <li><a (click)="goToPatientsArticles()">For Patients</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p>&copy; 2024 MediConnect. All rights reserved.</p>
+</div>
